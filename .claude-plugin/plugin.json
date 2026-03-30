@@ -1,0 +1,20 @@
+{
+  "name": "smart-compact",
+  "version": "1.0.0",
+  "description": "Save structured session context before /clear and auto-prompt to restore it next session. Never lose conversation context again.",
+  "author": {
+    "name": "Paolo Diana",
+    "url": "https://github.com/paolodiana"
+  },
+  "repository": "https://github.com/paolodiana/smart-compact",
+  "license": "MIT",
+  "keywords": [
+    "context",
+    "session",
+    "memory",
+    "compact",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}
