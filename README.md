@@ -88,6 +88,23 @@ smart-compact-context.md
 └── Session 2026-03-29 10:00 (older, pruned to key points)
 ```
 
+## Smart Compact vs `/compact`
+
+Claude Code has a built-in `/compact` command. Here's why Smart Compact exists alongside it:
+
+| | `/compact` (built-in) | `/smart-compact` (this plugin) |
+|---|---|---|
+| **What it does** | Summarizes conversation history to free up context | Extracts key decisions, problems, and next steps into a structured file |
+| **Context freed** | Partial — compresses old messages but keeps growing | Full — `/clear` after saving gives you ~100% free context |
+| **Survives `/clear`** | No — cleared along with everything else | Yes — saved to disk, persists across sessions |
+| **Cross-session** | No — lives only in the current session | Yes — auto-detected on next session start |
+| **Format** | Opaque summary (you don't control what's kept) | Structured: decisions with reasoning, problems with root causes, explicit next steps |
+| **Accumulation** | Re-compacts over itself, losing detail each time | Living document — appends new sessions, prunes old ones while keeping key lessons |
+
+**Think of it this way:** `/compact` compresses the tape so you can keep recording a bit longer. `/smart-compact` saves the highlight reel to a separate disk, lets you start with a blank tape, and auto-loads the highlights next time.
+
+**They work best together:** use `/compact` during a session to extend your runway, and `/smart-compact` at the end to preserve what matters before starting fresh.
+
 ## Requirements
 
 - Claude Code CLI
